@@ -4,7 +4,7 @@ public class Baekjoon10172 {
 
 	public static void main(String[] args) {
 		
-		// 주어진 예제 출력(강아)
+		// 주어진 예제 출력(강아지)
 		System.out.println("|\\_/|");
 		System.out.println("|q p|   /}");
 		System.out.println("( 0 )\"\"\"\\");

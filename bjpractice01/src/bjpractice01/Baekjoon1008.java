@@ -15,7 +15,7 @@ public class Baekjoon1008 {
 		
 		sc.close();
 		
-		System.out.printf("%d\n", a/b);
+		System.out.println(a/b);
 			
 	}
 }
