@@ -17,7 +17,7 @@ public class study_001 {
 		System.out.print("1");
 		for(i = 1; i<=10; i=i+1) {
 			s = s + 1/i;
-			System.out.println(" 1/" + i);
+			System.out.print(" 1/" + i);
 		}
 		System.out.format("누적값 :"+s);
 	}

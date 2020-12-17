@@ -197,3 +197,60 @@ NOTION
     ```
 
 =============================================================
+** 수열 
+
+1. 소수를 판별하는 알고리즘 
+    - 문제 : 임의의 양의 정수를 입력하여 소수를 판별하는 순서도를 작성.
+    - 문제 분석
+
+        ⇒ 소수란 ? 1과 자기 자신만을 약수로 가지는 수를 의미 
+
+        ⇒ A : 입력 받은 수, J : 2부터 A까지의 수 (제수), MOD()는 나머지를 구하는 함수 
+
+    - 준비
+
+        ⇒ 젯수 J를 2로 초기화
+
+    - 처리
+
+        ⇒ 입력 받은 수를 J로 나눈 나머지가 0이면 a로 분기하고 아니면 b로 분기.
+
+        나머지가 0이 될 때 까지 이 과정을 반복 
+
+    - 결과
+
+        ⇒ "소수" 또는 "소수가 아님"을 출력 
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/afef6bca-b2fa-4885-9fb3-5f0dfa21e66d/_2021-01-30__4.38.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/afef6bca-b2fa-4885-9fb3-5f0dfa21e66d/_2021-01-30__4.38.43.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/92279ef5-6fe4-4373-8014-0543c1d13ee0/_2021-01-30__4.41.05.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/92279ef5-6fe4-4373-8014-0543c1d13ee0/_2021-01-30__4.41.05.png)
+
+    2) code 
+
+    ```java
+    public class study_002 {
+
+    	public static void main(String[] args) throws IOException {
+    		int num = 0, j; 
+    		Boolean isPrime = true;
+    		num = System.in.read();
+    		for(j=2; j<num; j=j+1) {
+    			if(num%j == 0) {
+    				isPrime = false;
+    				break;
+    			}
+    		}
+    		if(isPrime) {
+    			System.out.print("소수");
+    		}else {
+    			System.out.print("소수가 아님");
+    		}
+    	}
+    }
+    ```
+
+
+
+
