@@ -19,7 +19,5 @@ public class study_002 {
 		}else {
 			System.out.print("소수가 아님");
 		}
-
 	}
-
 }
