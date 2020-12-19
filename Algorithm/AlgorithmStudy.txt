@@ -319,4 +319,71 @@ NOTION
     			sc.close();
     	} 
     }
-   
+
+=============================================================
+
+** 소수
+
+1. 소수의 개수 구하기 
+    - 문제 : 임의의 양의 정수를 입력하여 그 안에 포함된 소수의 개수를 구하는 순서도를 작성
+    - 문제 분석
+
+        ⇒ 입력받은 수가 10이면 2~10사이의 소수를 구하고 그 개수를 구하는 순서도를 작성 
+
+        ⇒ A : 입력 받은 수 J : 2부터 A까지의 수(제수) , MOD()는 나머지를 구하는 함수
+
+        ⇒ cnt : 소수가 누적되어 저장될 변수 
+
+        ⇒ K : 소수인지 판단 할 숫자를 2부터 시작 
+
+    - 준비
+
+        ⇒ SUM = 0, k = 2, 제수 J를 2로 초기화
+
+    - 처리
+
+        ⇒ 입력 받은 수를 J로 나눈 나머지가 0이면 a로 분기하고 아니면 b로 분기.
+
+        소수이면 개수를 누적, 나머지가 0이 될 때 까지 이 과정을 반복 
+
+    - 결과
+
+        ⇒ 소수의 개수 cnt을 출력 
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2b214c7b-4ca9-44c7-b155-6bc6b93c3a1e/_2021-01-30__5.38.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2b214c7b-4ca9-44c7-b155-6bc6b93c3a1e/_2021-01-30__5.38.38.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b94fd1d6-d33d-46f4-9356-7369ddc41cd0/_2021-01-30__5.39.01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b94fd1d6-d33d-46f4-9356-7369ddc41cd0/_2021-01-30__5.39.01.png)
+
+    2) code 
+
+    ```java
+    public class study_004 {
+
+    	public static void main(String[] args) {
+    		Scanner sc = new Scanner(System.in);
+    		int num = sc.nextInt();
+    		int cnt = 0;
+    		int K = 2; 
+    		do {
+    			int J=2;
+    			while(K%J !=0) {
+    				J = J + 1;
+    			}//while
+    			if(K==J) {
+    				cnt = cnt + 1;
+    				System.out.print(K + "\t");
+    			} // if 
+    			if (K<num) {
+    				K = K + 1;
+    			} else {
+    				break;
+    			}
+    		} while (true); 
+    		System.out.println("");
+    		System.out.println("입력한 " + num + "까지의 소수 개수 : " + cnt + "개");
+    		sc.close();
+    	}
+    }
+    
