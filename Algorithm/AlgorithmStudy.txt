@@ -473,4 +473,73 @@ public class study_006 {
 	}
 }
     
-    
+=============================================================
+
+** 약수
+
+1. 최대공약수, 최소 공배수 구하기 
+    - 문제 : 두 개 정수를 입력 받아 두 수의 최대 공약수와 최소 공배수를 구하는 순서도 작성
+    - 문제 분석
+
+        ⇒ 주어진 두 개 숫자 중에서 큰 수를 결정한 수 큰 수 / 작은 수를 계산해서 나머지가 0이 아니면 다시 작은 수를 큰 수로 하고 나머지를 작은 수로 해서 다시 나눗셈을 한 후 나머지가 0이면 작은 수가 최대 공약수.
+
+        ⇒ 최소 공배수를 구하는 방법은 두 수를 곱하여 최대 공약수로 나누면 구해짐 
+
+    - 준비
+
+        ⇒ 두 수(a,b)를 입력 받는다. 큰 수를 big으로, 작은 수를 small로 지정 
+
+    - 처리
+
+        ⇒ big/small의 나머지를 nmg로 지정. nmg = 0 이면 small이 gcm이 되고 lcm은 원래 두 수를 곱하여 gcm으로 나누면 구해짐
+
+        ⇒ nmg가 0이 아니면 small의 값을 big의 값으로, nmg를 small의 값을 한 후 위 과정을 반복 
+
+    - 결과
+
+        ⇒ gcm, lcm을 출력 
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b5fb8c0-5752-45ef-8f77-20a119cdf781/_2021-01-30__9.35.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b5fb8c0-5752-45ef-8f77-20a119cdf781/_2021-01-30__9.35.18.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80cd06f6-1000-48a8-86e3-9c21dc8f4dea/_2021-01-30__9.36.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80cd06f6-1000-48a8-86e3-9c21dc8f4dea/_2021-01-30__9.36.47.png)
+
+    2) code 
+
+    ```java
+    public class study_007 {
+
+    	public static void main(String[] args) {
+    		Double lcm = 0.0, gcm  = 0.0, nmg, Big, Small, a, b;
+    		
+    		System.out.println("2개의 숫자를 입력해주세요. : ");
+    		Scanner sc = new Scanner(System.in);
+    		
+    		a = sc.nextDouble();
+    		b = sc.nextDouble();
+    		
+    		if(a >= b) {
+    			Big = a; Small = b;
+    		} else {
+    			Big = b; Small = a;
+    		}
+    		while (true) {
+    			nmg = (Big%Small);
+    			if(nmg == 0) {
+    				gcm = Small;
+    				lcm = ((a * b) / gcm);
+    				break;
+    			} else {
+    				Big =  Small;
+    				Small = nmg; 
+    			}
+    		}
+    			
+    			System.out.println("출력");
+    			System.out.println("최대 공약수 : " + gcm);
+    			System.out.println("최소 공배수 : " + lcm);
+    			
+    			sc.close();
+    	}
+    }
