@@ -602,4 +602,59 @@ public class study_006 {
 	}
 }
 
+2. 최소값 구하기 
+    - 문제 : 키보드로 5개의 성적을 입력받아 최소값을 구하는 순서도를 작성
+    - 문제 분석
+
+        ⇒ s : 입력 받은 숫자의 개수가 저장될 변수 
+
+        ⇒ j : 입력 받은 숫자가 저장될 배열  
+
+        ⇒ min : 최소값 저장 
+
+    - 준비
+
+        ⇒ s와 min를 0으로 초기화, 배열 j(5)를 선언 
+
+        ⇒ 배열 j에 저장할 데이터를 5개 읽어들임
+
+    - 처리
+
+        ⇒ i = i + 1 (1만큼 증가) 
+
+        ⇒ j(i)의 값을 mix와 하나씩 비교해서 mix보다 더 작으면 j(i)를 mix로 함 
+
+    - 결과
+
+        ⇒ min를 출력 
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7413971c-d34e-4e8d-ac03-c97c67e49601/_2021-01-30__10.29.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7413971c-d34e-4e8d-ac03-c97c67e49601/_2021-01-30__10.29.38.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/08865438-68c0-42e8-bea2-26d6a0ca44fb/_2021-01-30__10.30.00.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/08865438-68c0-42e8-bea2-26d6a0ca44fb/_2021-01-30__10.30.00.png)
+
+    2) code 
+
+    ```java
+    public class study_009 {
+
+    	public static void main(String[] args) {
+    		int s = 0, min = 100;
+    		int [] j = new int[5];
+    		System.out.println("5개의 숫자 입력");
+    		Scanner sc = new Scanner(System.in);
+    		for(s=0; s<5; s=s+1) {
+    			j[s] = sc.nextInt();
+    		}
+    		for(int i=0; i<5; i=i+1) {
+    			if(j[i] < min) {
+    				min = j[i];
+    			}
+    		}
+    		System.out.println("최소값은: " + min);
+    	}
+    }
+   
+
    
