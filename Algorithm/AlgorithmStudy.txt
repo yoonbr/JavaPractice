@@ -694,22 +694,24 @@ public class study_006 {
     2) code 
 
     ```java
-    public class study_009 {
-
+    public class study_010 {
+    	
     	public static void main(String[] args) {
-    		int s = 0, min = 100;
-    		int [] j = new int[5];
-    		System.out.println("5개의 숫자 입력");
+    		int i, min = 100, max = 0, hap = 0;
+    		int [] j = new int [5];
     		Scanner sc = new Scanner(System.in);
-    		for(s=0; s<5; s=s+1) {
-    			j[s] = sc.nextInt();
+    		System.out.println("숫자 입력"); 
+    		for(i=0; i<5; i=i+1) {
+    			j[i] = sc.nextInt();
     		}
-    		for(int i=0; i<5; i=i+1) {
-    			if(j[i] < min) {
-    				min = j[i];
-    			}
+    		for(i=0; i<5; i=i+1) {
+    			if(j[i] < min) min = j[i];
+    			if(j[i] > max) max = j[i];
     		}
-    		System.out.println("최소값은: " + min);
+    		
+    		hap = max + min; 
+    		System.out.println("최대값 : " + max + "최소값 : " + min);
+    		System.out.println("최대 최소값의 합 : " + hap);
     	}
     }
-   
+  
