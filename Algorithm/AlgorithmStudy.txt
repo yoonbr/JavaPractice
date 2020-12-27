@@ -862,4 +862,66 @@ public class study_006 {
     		System.out.println("3에 가장 가까운 수 : " + m);
     	}
     }
+
+=============================================================
+
+** Gray Code
+
+1. Gray Code
+    - 문제 : 이진수 비트 5개를 입력 받아 그레이 코드로 변환하는 순서도 작성
+    - 문제 분석
+
+        ⇒ 맨 처음 비트는 그대로 내려오고 제일 처음 비트와 2번째 비트를 XOR 연산하여 그레이 코드의 2번째 비트로 지정. 같은 방법으로 마지막 비트까지 처리 
+
+        ⇒ b(5) : 이진수 비트 배열 
+
+        ⇒ g(5) : 그레이 코드로 변환된 배열 
+
+    - 준비
+
+        ⇒ b(5) 이진수 비트 배열 g(5) 그레이 코드로 변환된 배열을 선언, cnt = 0으로 초기화, b(i)를 5자리 읽어들임 
+
+    - 처리
+
+        ⇒ 이진수 비트배열 첫째 자리와 둘째자리, 둘째자리와 셋째자리 등 서로 비교하면서 같으면 그레이코드에는 0을, 다르면 1을 값으로 지정 
+
+    - 결과
+
+        ⇒ 배열 g(i)를 출력 
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b14ca50-405f-4a4a-b6f2-1e638d7ef9db/_2021-01-31__12.04.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b14ca50-405f-4a4a-b6f2-1e638d7ef9db/_2021-01-31__12.04.38.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc768dfe-ab56-4bc5-86b8-b16e4fb6d2ec/_2021-01-31__12.04.54.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc768dfe-ab56-4bc5-86b8-b16e4fb6d2ec/_2021-01-31__12.04.54.png)
+
+    2) code 
+
+    ```java
+    public class study_013 {
+
+    	public static void main(String[] args) {
+    		int cnt = 0;
+    		int [] b = new int [5];
+    		int [] g = new int [5];
+    		System.out.println("숫자 입력");
+    		Scanner sc = new Scanner(System.in);
+    		for(cnt=0; cnt<5; cnt=cnt+1) {
+    			b[cnt] = sc.nextInt();
+    			g[cnt] = b[cnt];
+    		}
+    		for(int i=0; i<cnt-1; i=i+1) {
+    			if(b[i] == b[i+1]) { 
+    				g[i+1]=0;
+    			} else {
+    				g[i+1]=1;
+    			}
+    		}
+    			System.out.println("Gray Code : ");
+    			for(int i=0; i<cnt; i=i+1) {
+    				System.out.print(g[i] + " ");
+    			}
+    	}
+    }
+    
     
