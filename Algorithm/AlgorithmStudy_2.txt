@@ -1,0 +1,66 @@
+** Algorithm
+NOTION 
+-> https://www.notion.so/Algorithm_2-4db748980fda4774bc1763460b1bf82a
+** 정렬 
+
+1. Bubble Sort 
+    - 문제 : 5개의 데이터를 입력 받아 배열에 저장한 후 저장된 자료를 오름차순으로 정렬 (버블정렬)하는 순서도를 작성
+    - 문제 분석
+
+        ⇒ a(5) : 정렬할 숫자가 저장될 배열 
+
+        ⇒ i : 회전 수를 계산하는 변수 
+
+        ⇒ Temp : 자료 교환에 필요한 임시 변수 ㄴ
+
+    - 준비
+
+        ⇒ a(5) 배열을 선언하고 데이터를 읽어들임 
+
+    - 처리
+
+        ⇒ 인접한 두 개의 데이터를 비교해 앞의 데이터가 크면 데이터와 값을 교환 
+
+        ⇒ 컴퓨터에서 두 개 변수의 값을 교환하기 위해서는 임시변수(Temp) 가 반드시 필요함 
+
+        ⇒ 이중 반복문을 통해 반복하고 나면 데이터가 오름차순으로 정렬되어 있음 
+
+    - 결과
+
+        ⇒ 배열 a(i)출력
+
+    1) Flow Chart 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fba8eee9-cbf3-4afb-bd84-c43ad41d4bf0/_2021-01-31__12.40.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fba8eee9-cbf3-4afb-bd84-c43ad41d4bf0/_2021-01-31__12.40.37.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/998bd49d-4603-4c4f-bc11-f010141c92f2/_2021-01-31__12.43.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/998bd49d-4603-4c4f-bc11-f010141c92f2/_2021-01-31__12.43.36.png)
+
+    2) code 
+
+    ```java
+    public class study_015 {
+
+    	public static void main(String[] args) {
+    		int i, j, temp; 
+    		int a[] = new int[5]; 
+    		System.out.println("값을 입력하세요");
+    		Scanner sc = new Scanner(System.in);
+    		for(i=0; i<5; i=i+1) {
+    			a[i] = sc.nextInt();
+    		}
+    		for(j=4; j>=0; j=j-1) {
+    			for(i=0; i<j; i=i+1) {
+    				if(a[i]>a[i+1]) {
+    					temp = a[i];
+    					a[i] = a[i+1];
+    					a[i+1] = temp;
+    				}
+    			}
+    		}
+    		System.out.println("정렬 후");
+    		for(i=0; i<5; i=i+1) {
+    			System.out.println(a[i] + " ");
+    		}
+    	}
+    }
+    ```
